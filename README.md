@@ -25,12 +25,13 @@ maximize the potential of mobile shoppers.
 
 ### 概要
 
-EC-CUBE で運営する店舗を Android のアプリで利用するためのサンプルアプリです。  
-このサンプルアプリはプッシュ通知を受信するための例として [「Appiaries プッシュ通知プラグイン」](http://www.ec-cube.net/products/detail.php?product_id=) を用いた仕組みを実装していますが、それ以外のサービスを利用することも可能です。
+EC-CUBE3系で運営するショップを Android のアプリとして連携することができます
+
+プッシュ通知を受信するための例として [「Appiaries プッシュ通知プラグイン」](http://www.ec-cube.net/products/detail.php?product_id=1030) を用いた仕組みを実装していますが、それ以外のサービスを利用することも可能です。
 
 ### 使い方
 
-Android Studio のプロジェクトになっています。  
+Android Studio のプロジェクトになっています。 
 git clone でローカルにソースコードを展開して下さい。
 
 ## アプリをカスタマイズする
@@ -41,7 +42,7 @@ git clone でローカルにソースコードを展開して下さい。
 
 パッケージ名（アプリ ID）の変更は Android Studio に一般的な方法でおこなわれますが、以下に作業の流れを要約します。
 
-1. Android Studio でサンプルアプリを開きます。
+1. Android Studio で本アプリを開きます。
 2. プロジェクトエクスプローラーを開きます。
 3. app ディレクトリを右クリックし、Open Module Settings を選択します。
 4. Module Settings 画面に表示されている Flavors タブを開きます。
@@ -54,12 +55,12 @@ git clone でローカルにソースコードを展開して下さい。
 3. プロジェクト直下にある .idea ディレクトリの下の module.xml と workspace.xml の中において eccube-Android と記述されている部分をすべて変更します。
 4. プロジェクト直下にある .name ファイルに eccube-Android という記述を変更します。
 
-### ウェブサイトを設定する
+### 運営しているEC-CUBEのショップのURLを設定する
 
-アプリがアクセスする店舗（アプリが表示する）のウェブサイトの URL を設定します。
+アプリと連携するショップの URL を設定します。
 
 1. net/ec_cube/eccube_Android/Config.java を開きます。
-2. BASE_URL にすでに設定されている www.ec-cube.net を店舗のウェブサイトの URL に書き換えます。
+2. BASE_URL にすでに設定されている www.example.net をショップの URL に書き換えます。
 
 
 ### スプラッシュ画像を変更する
@@ -81,10 +82,14 @@ git clone でローカルにソースコードを展開して下さい。
 
 ### プッシュ受信の設定を変更する
 
-本アプリは[「Appiaries プッシュ通知プラグイン」](http://www.ec-cube.net/products/detail.php?product_id=) によって配信されるプッシュ通知を受信するように実装されています。したがってアピアリーズとの連携の設定が必要です。もちろん、プッシュ通知の配信や受信は他のサービスを利用して実装することも可能です。
+運営しているEC-CUBE3系のショップに、[「Appiaries プッシュ通知プラグイン」](http://www.ec-cube.net/products/detail.php?product_id=1030) を利用することで、簡単にプッシュ通知に対応することができます。
 
-GCM とアピアリーズに登録し、それぞれの情報をプラグインに設定する方法については[「Appiaries プッシュ通知プラグイン」](http://www.ec-cube.net/products/detail.php?product_id=) をインストールした後でプラグインの「設定」ページに詳細がありますのでそちらを参照して下さい。  
-プラグインの設定の完了後、アプリがアピアリーズと連携するための値は net/ec_cube/eccube_Android/Config.java に記述されます。
+* アピアリーズとの連携の設定が別途必要です
+* プッシュ通知の配信や受信は他のサービスを利用して実装することも可能です。
+
+GCM とアピアリーズに登録し、それぞれの情報をプラグインに設定する方法については[「Appiaries プッシュ通知プラグイン」](http://www.ec-cube.net/products/detail.php?product_id=1030) をインストールした後でプラグインの「設定」ページに詳細がありますのでそちらを参照して下さい。  
+
+プラグインの設定の完了後、本アプリがアピアリーズと連携するための値は net/ec_cube/eccube_Android/Config.java に記述されます。
 
 1. Config.java を開きます。
 2. GCM の Developer Console に表示される**「Project Number」**を SENDER_ID 設定します。
@@ -103,6 +108,3 @@ GCM とアピアリーズに登録し、それぞれの情報をプラグイン�
 5. Module Settings 画面に表示されている Flavors タブを開きます。
 6. Signing タブ内の**「Key Alias」**、**「Key Password」**、**「Store File」**、**「Store Password」**をそれぞれ設定します。
 
-## お問い合わせ
-
-EC-CUBE お問い合わせ窓口は [こちら]() です。
