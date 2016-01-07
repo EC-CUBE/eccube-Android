@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <!-- Toolbar(今回は非表示にしています) -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:visibility="gone"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <!-- アイコン -->
+        <ImageView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/logo"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <!-- メインコンテンツ -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_tabs"
+        android:layout_below="@id/toolbar">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- WebView -->
+            <WebView
+                android:id="@+id/webview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ProgressBar
+                android:id="@+id/progress"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+
+        <!-- 通知情報 -->
+        <LinearLayout
+            android:id="@+id/notification_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:background="@android:color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/notification_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/notification_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true">
+
+        <!-- TOP -->
+        <Button
+            android:id="@+id/tab_top"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/home"
+            android:text="@string/tab_label_top"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/tab_text_size"/>
+
+        <!-- マイページ -->
+        <Button
+            android:id="@+id/tab_mypage"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/mypage"
+            android:text="@string/tab_label_mypage"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/tab_text_size"/>
+
+        <!-- 全商品 -->
+        <Button
+            android:id="@+id/tab_all_items"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/list"
+            android:text="@string/tab_label_all_items"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/tab_text_size"/>
+
+        <!-- カート -->
+        <Button
+            android:id="@+id/tab_cart"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/cart"
+            android:text="@string/tab_label_cart"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/tab_text_size"/>
+
+        <!-- お気に入り -->
+        <Button
+            android:id="@+id/tab_fav"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/favorite"
+            android:text="@string/tab_label_fav"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/tab_text_size"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

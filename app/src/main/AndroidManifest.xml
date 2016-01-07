@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    package="net.ec_cube.eccube_Android"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- WebViewのパーミッション -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- PUSH通知のパーミッション -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="net.ec_cube.eccube_Android.permission.C2D_MESSAGE"/>
+
+    <permission
+        android:name="net.ec_cube.eccube_Android.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+
+        <!-- スプラッシュ画面 -->
+        <activity
+            android:name="net.ec_cube.eccube_Android.SplashActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <!-- 通知処理用画面 -->
+        <activity
+            android:name="net.ec_cube.eccube_Android.NotificationHelperActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent"/>
+        <!-- Web表示画面 -->
+        <activity
+            android:name="net.ec_cube.eccube_Android.MainActivity"
+            android:screenOrientation="portrait"/>
+        <!-- PUSH通知の受信 -->
+        <receiver
+            android:name="net.ec_cube.eccube_Android.PushBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="net.ec_cube.eccube_Android"/>
+            </intent-filter>
+        </receiver>
+        <!-- メッセージ開封通知サービス -->
+        <service android:name="net.ec_cube.eccube_Android.OpenMessageService"/>
+
+    </application>
+
+</manifest>
