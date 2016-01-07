@@ -45,14 +45,17 @@ git clone でローカルにソースコードを展開して下さい。
 2. プロジェクトエクスプローラーを開きます。
 3. app ディレクトリを右クリックし、Open Module Settings を選択します。
 4. Module Settings 画面に表示されている Flavors タブを開きます。
-5. Flavors タブ内の Application ID の項目が net.ec_cube.eccube_Android となっている部分を、希望するパッケージ名へ変更します。
-
-上記の手順でパッケージ名を変更するかぎり、プロジェクト内において変更すべきファイルは **すべて自動的に変更されるはず** ですが、もし変更が上手くいかない場合、手動で以下の作業を行って下さい。
-
-1. 物理的なプロジェクトのディレクトリである eccube-Android のディレクトリ名を変更します。
-2. プロジェクト直下にある eccube-Android.iml のファイル名を変更します。
-3. プロジェクト直下にある .idea ディレクトリの下の module.xml と workspace.xml の中において eccube-Android と記述されている部分をすべて変更します。
-4. プロジェクト直下にある .name ファイルに eccube-Android という記述を変更します。
+5. Flavors タブ内の Application ID の項目が net.ec_cube.eccube_Android となっている部分を新しいパッケージ名に変更します。
+6. Android Studio を閉じます。
+7. 物理的なプロジェクトのディレクトリである eccube-Android のディレクトリ名を希望するプロジェクト名に変更します。
+8. プロジェクト直下にある eccube-Android.iml を削除します。
+9. プロジェクト直下にある .name ファイルに eccube-Android という記述を変更します。
+10. プロジェクト直下にある .idea ディレクトリの下の module.xml と workspace.xml の中において eccube-Android と記述されている部分をすべて変更します。
+11. app/src/main 直下にある AndroidManifest.xml のなかで net.ec_cube.eccube_Android となっている部分をすべて新しいパッケージ名に変更します。
+12. app/src/main/java の下の net/ec_cube/eccube_Android という物理的なディレクトリ構成を、新しいパッケージ名のディレクトリ構成に合わせて変更します。
+13. またその中のすべての *.java ファイルに記載されているパッケージ名 net.ec_cube.eccube_Android をすべて新しいパッケージ名に変更します。
+14. Android Studio を起動します。
+15. プロジェクト直下に [新しいパッケージ名].iml ファイルが生成されることを確認します。
 
 ### 運営しているEC-CUBEのショップのURLを設定する
 
@@ -106,4 +109,3 @@ GCM とアピアリーズに登録し、それぞれの情報をプラグイン�
 4. app フォルダを右クリックし、Open Module Settings を選択します。
 5. Module Settings 画面に表示されている Flavors タブを開きます。
 6. Signing タブ内の**「Key Alias」**、**「Key Password」**、**「Store File」**、**「Store Password」**をそれぞれ設定します。
-

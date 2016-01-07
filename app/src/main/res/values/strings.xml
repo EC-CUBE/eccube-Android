@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">EC-CUBE サンプルアプリ</string>
+
+    <string name="tab_label_top">TOP</string>
+    <string name="tab_label_all_items">商品一覧</string>
+    <string name="tab_label_mypage">マイページ</string>
+    <string name="tab_label_cart">カート</string>
+    <string name="tab_label_fav">お気に入り</string>
+
+    <string name="error_splash">PUSH通知の登録失敗。設定や通信環境を確認し、もう一度起動してください</string>
+
+</resources>

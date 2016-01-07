@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ab-android-2_0_10">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/ab-android-2_0_10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
