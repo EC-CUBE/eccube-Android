@@ -5,11 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+/*
+Appiariesプッシュ通知受信機能を使う場合はコメントアウトを外して下さい。
 import com.appiaries.baas.sdk.AB;
 import com.appiaries.baas.sdk.ABDevice;
 import com.appiaries.baas.sdk.ABException;
 import com.appiaries.baas.sdk.ABPushMessage;
 import com.appiaries.baas.sdk.ABResult;
+*/
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,6 +37,8 @@ public class OpenMessageService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         System.out.println("openMessageの開始");
 
+/*
+Appiariesプッシュ通知受信機能を使う場合はコメントアウトを外して下さい。
         // アピアリーズ初期化
         AB.Config.setDatastoreID(Config.DATASTORE_ID);
         AB.Config.setApplicationID(Config.APPLICATION_ID);
@@ -65,5 +70,6 @@ public class OpenMessageService extends IntentService {
         } catch (ABException e) {
             System.out.println("error:" + e);
         }
+*/
     }
 }

@@ -27,8 +27,11 @@ import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Log;
 
+/*
+Appiariesプッシュ通知受信機能を使う場合はコメントアウトを外して下さい。
 import com.appiaries.baas.sdk.AB;
 import com.appiaries.baas.sdk.ABDevice;
+*/
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;

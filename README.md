@@ -91,13 +91,16 @@ git clone でローカルにソースコードを展開して下さい。
 
 GCM とアピアリーズに登録し、それぞれの情報をプラグインに設定する方法については[「Appiaries プッシュ通知プラグイン」](http://www.ec-cube.net/products/detail.php?product_id=1030) をインストールした後でプラグインの「設定」ページに詳細がありますのでそちらを参照して下さい。  
 
-プラグインの設定の完了後、本アプリがアピアリーズと連携するための値は net/ec_cube/eccube_Android/Config.java に記述されます。
+プラグインの設定の完了後、SDK をプロジェクトに追加し、コメントアウトを外し、必要なパラメータを設定する必要があります。
 
-1. Config.java を開きます。
-2. GCM の Developer Console に表示される**「Project Number」**を SENDER_ID 設定します。
-3. アピアリーズで契約した**「データストア ID」**を DATASTORE_ID 設定します。
-4. アピアリーズで登録した**「アプリ ID」**を APPLICATION_ID 設定します。
-5. アピアリーズで登録したアプリの**「アプリトークン」**を APPLICATION_TOKEN 設定します。
+1. Appiaries 公式ウェブサイトから Android SDK を [ダウンロード](http://docs.appiaries.com/?p=14066) します。
+2. ダウンロードしたファイルを解凍し、プロジェクトエクスプローラー内で app/libs フォルダにコピーします。
+3. ソースコード OpenMessageService.java および PushRegistrationFragment.java にて「Appiaries プッシュ通知受信機能を使う場合はコメントアウトを外して下さい」と記載された箇所のコメントアウトを外します。
+4. アピアリーズとの連携に必要なパラメータを設定するため、ソースコード Config.java を開きます。
+5. GCM の Developer Console に表示される「Project Number」を *SENDER_ID* に設定します。
+6. アピアリーズで契約した「データストア ID」を *DATASTORE_ID* に設定します。
+7. アピアリーズで登録した「アプリ ID」を *APPLICATION_ID* に設定します。
+8. アピアリーズで登録したアプリの「アプリトークン」を *APPLICATION_TOKEN* に設定します。
 
 ### keystoreを設定する
 
