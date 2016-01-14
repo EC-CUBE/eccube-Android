@@ -62,7 +62,7 @@ git clone でローカルにソースコードを展開して下さい。
 アプリと連携するショップの URL を設定します。
 
 1. net/ec_cube/eccube_Android/Config.java を開きます。
-2. BASE_URL にすでに設定されている www.example.net をショップの URL に書き換えます。
+2. BASE_URL にすでに設定されている example.com をショップの URL に書き換えます。
 
 
 ### スプラッシュ画像を変更する

@@ -13,7 +13,7 @@ public class Config {
     /**
      * タブのTOPに対応するURL
      */
-    public static final String BASE_URL = "http://www.ec-cube.net/";
+    public static final String BASE_URL = "http://example.com/";
 
     /**
      * タブのTOPに対応するURL
